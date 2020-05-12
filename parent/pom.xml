@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.javastudio.tutorial.logging</groupId>
+    <artifactId>enterprise-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>../logger</module>
+        <module>../service</module>
+        <module>../web</module>
+        <module>../ear</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+
+        <service.artifactId>enterprise-service</service.artifactId>
+        <web.artifactId>enterprise-web</web.artifactId>
+        <ear.artifactId>enterprise-ear</ear.artifactId>
+
+        <service.version>1.0.0-SNAPSHOT</service.version>
+        <web.version>1.0.0-SNAPSHOT</web.version>
+        <ear.version>1.0.0-SNAPSHOT</ear.version>
+
+        <service.archive>enterprise-service</service.archive>
+        <web.archive>enterprise-web</web.archive>
+        <ear.archive>enterprise-ear</ear.archive>
+
+        <web.contextRoot>enterprise</web.contextRoot>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <generatedTestSourcesDirectory>true</generatedTestSourcesDirectory>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerArguments>
+                        <endorseddirs>${project.build.directory}/endorsed</endorseddirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.javastudio.tutorial.logging</groupId>
+            <artifactId>logger</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>7.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
