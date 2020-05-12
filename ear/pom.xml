@@ -68,7 +68,7 @@
                         <id>undeploy</id>
                         <phase>clean</phase>
                         <goals>
-<!--                            <goal>undeploy</goal>-->
+                            <goal>undeploy</goal>
                         </goals>
                         <configuration>
                             <ignoreMissingDeployment>true</ignoreMissingDeployment>
@@ -79,7 +79,7 @@
                         <id>deploy</id>
                         <phase>install</phase>
                         <goals>
-<!--                            <goal>deploy</goal>-->
+                            <goal>deploy</goal>
                         </goals>
                     </execution>
                 </executions>

@@ -19,27 +19,6 @@
 
     <build>
         <finalName>${web.archive}</finalName>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                        </manifest>
-                        <manifestEntries>
-                            <url>${project.url}</url>
-                        </manifestEntries>
-                    </archive>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
     <dependencies>

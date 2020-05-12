@@ -19,25 +19,5 @@
 
     <build>
         <finalName>${service.archive}</finalName>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-ejb-plugin</artifactId>
-                <version>3.0.1</version>
-                <configuration>
-                    <generateClient>true</generateClient>
-                    <archive>
-                        <addMavenDescriptor>true</addMavenDescriptor>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                        </manifest>
-                        <manifestEntries>
-                            <url>${project.url}</url>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 </project>
